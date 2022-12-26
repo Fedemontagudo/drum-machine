@@ -84,9 +84,13 @@
     key.classList.add('playing')
   }
 
+  const removeTransition = (e) => {
+    console.log(e)
+  }
 
   const keys = document.querySelectorAll('.key')
-  keys.forEach(key => key.addEventListener('transitionend', (e) => {console.log(e)}))
+  console.log(keys) //for now, the previous querySelectorAll works on my browser's console, but here is not working
+  keys.forEach(key => key.addEventListener('transitionend', removeTransition))
 
 
   window.addEventListener('keydown', playSound)
